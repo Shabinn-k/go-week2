@@ -38,7 +38,7 @@ package main
 import f "fmt"
 func Maxarr(num []int)int{
 	max:=num[0]
-	for i:=0;i<len(num);i++{
+	for i:=range num{
 		if num[i]>max{
 			max=num[i]
 		}
