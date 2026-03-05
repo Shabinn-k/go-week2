@@ -14,7 +14,7 @@
 	
 // 	ind:=1
 // 	val:=2
-// 	for i:=len(arr)-1;i>0;i--{
+// 	for i:=len(arr)-1;i>ind;i--{
 // 		arr[i]=arr[i-1]
 // 	}
 // 	arr[ind]=val
