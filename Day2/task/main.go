@@ -20,7 +20,6 @@
 
 
 // 2. Reverse an array
-// 3. Solve 2–3 LeetCode problems (Two Sum, Merge Sorted Arrays, etc.)
 package main
 import "fmt"
 func main() {
@@ -34,3 +33,5 @@ func main() {
 	}
 	fmt.Println(array)
 }
+
+// 3. Solve 2–3 LeetCode problems (Two Sum, Merge Sorted Arrays, etc.)
