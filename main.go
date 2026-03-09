@@ -115,8 +115,82 @@
 // 	}
 // }
 
+//single linked
 package main
-
-func main() {
-	
+import "fmt"
+type Node struct{
+	data int
+	next *Node
 }
+func main() {
+	node1:=&Node{data: 10}
+	node2:=&Node{data: 20}
+	node3:=&Node{data: 30}
+
+	node1.next=node2	
+	node2.next=node3
+
+	head:=node1
+	current:=head
+
+	node0:=&Node{data: 0}
+	node0.next=head
+	head=node0
+
+	newNode:=&Node{data: 40}
+	for current.next!=nil{
+		current=current.next
+	}
+	current.next=newNode
+	
+	for current.next.next!=nil{
+		current=current.next
+	}
+	current.next=nil
+	head=head.next
+	temp:=head
+	for temp!=nil{
+		fmt.Println(temp.data)
+		temp=temp.next
+	}
+}
+
+//double linked
+// package main
+// import "fmt"
+// type Node struct{
+// 	prev *Node
+// 	data int
+// 	next *Node
+// }
+// func main() {
+// 	node1:=&Node{data: 10}
+// 	node2:=&Node{data: 20}
+// 	node3:=&Node{data: 30}
+
+// 	node1.next=node2
+// 	node2.prev=node1	
+// 	node2.next=node3
+// 	node3.prev=node2
+
+// 	head:=node1
+// 	current:=head
+
+// 	node0:=&Node{data: 0}
+// 	node0.next=head
+// 	head.prev=node0
+// 	head=node0
+// 	newNode:=&Node{data: 40}
+// 	for current.next!=nil{
+// 		current=current.next
+// 	}
+// 	current.next=newNode
+// 	newNode.prev=current
+// 	current.next=nil
+// 	head=head.next
+// 	head.prev=nil
+// 	for head!=nil{
+// 		fmt.Println(head.data)
+// 		head=head.next
+// 	}
+// }

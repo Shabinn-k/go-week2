@@ -1,43 +1,93 @@
+// package main
+
+// import "fmt"
+
+// type que struct {
+// 	arr []int
+// }
+
+// func (q *que) Enque(val int) {
+// 	q.arr = append(q.arr, val)
+// }
+// func (q *que) Deque() int {
+// 	if len(q.arr) == 0 {
+// 		fmt.Println("queue underflow")
+// 		return -1
+// 	}
+//     val:=q.arr[0]
+//     q.arr=q.arr[1:]
+//     return val
+// }
+// func (q que)peek()int{
+//     if len(q.arr)==0{
+//         fmt.Println("underflow")
+//         return -1
+//     }
+//     return q.arr[0]
+// }
+// func (q *que)display(){
+//     fmt.Println(q.arr)
+// }
+// func main() {
+// a:=que{}
+// a.Enque(10)
+// a.Enque(20)
+// a.Enque(30)
+// a.display()
+// fmt.Println(a.Deque())
+// fmt.Println(a.Deque())
+// fmt.Println(a.Deque())
+// fmt.Println(a.Deque())
+// fmt.Println(a.peek())
+// }
+
 package main
+
 import "fmt"
-
-type Stack struct {
-    items []int
+type Node struct{
+    data int
+    next *Node
 }
-
-// Push element
-func (s *Stack) Push(value int) {
-    s.items = append(s.items, value)
+type que struct{
+    fist *Node
+    last *Node
 }
-
-// Pop element
-func (s *Stack) Pop() int {
-    if len(s.items) == 0 {
-        fmt.Println("Stack is empty")
+func (q *que)enq(val int){
+    newNode:=&Node{data: val}
+    if q.last==nil{
+        q.fist=newNode
+        q.last=newNode
+        return
+    }
+    q.last.next=newNode
+    q.last=newNode
+}
+func (q *que)deq()int{
+    if q.fist==nil{
+        fmt.Println("empty q")
         return -1
     }
-
-    index := len(s.items) - 1
-    element := s.items[index]
-    s.items = s.items[:index]
-
-    return element
+    val:=q.fist.data
+    q.fist=q.fist.next
+    if q.fist==nil{
+        q.last=nil
+    }
+    return val
 }
 
-// Peek top element
-func (s *Stack) Peek() int {
-    return s.items[len(s.items)-1]
+func (q *que)display(){
+    temp:=q.fist
+    for temp!=nil{
+        fmt.Println(temp.data)
+        temp=temp.next
+    }
 }
-
 func main() {
-    var s Stack
-
-    s.Push(10)
-    s.Push(20)
-    s.Push(30)
-
-    fmt.Println("Stack:", s.items)
-
-    // fmt.Println("Pop:", s.Pop())
-    fmt.Println("Peek:", s.Peek())
+    s:=que{}
+    s.enq(10)
+    s.enq(20)
+    s.enq(30)
+    s.display()
+    fmt.Println(s.deq())
+    s.display()
 }
