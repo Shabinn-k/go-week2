@@ -16,15 +16,15 @@ package main
 import "fmt"
 
 func main() {
-	// x:=10
-	// p:=&x
-	// pp:=&p
-	// fmt.Println(**pp)
-
-	x:=20
+	x:=10
 	p:=&x
-	fmt.Println(*p)
-	*p=40
-	fmt.Println(*p)
+	pp:=&p
+	fmt.Println(**pp)
+
+	// x:=20
+	// p:=&x
+	// fmt.Println(*p)
+	// *p=40
+	// fmt.Println(*p)
 
 }

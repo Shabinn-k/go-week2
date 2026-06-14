@@ -12,22 +12,23 @@
 // 		array[i]=array[i-1]
 // 	}
 // 	array[index]=value
-// 	f.Println(array)	
+// 	f.Println(array)
 
 // 	array = append(array[:4],array[5:]...)
 // 	f.Println(array)
 // }
 
-
 // 2. Reverse an array
 package main
+
 import "fmt"
+
 func main() {
-	array:=[]int{5,4,3,2,1}
-	f:=0
-	l:=len(array)-1
-	for l>f{
-		array[f],array[l]=array[l],array[f]
+	array := []int{5, 4, 3, 2, 1}
+	f := 0
+	l := len(array) - 1
+	for l > f {
+		array[f], array[l] = array[l], array[f]
 		f++
 		l--
 	}
