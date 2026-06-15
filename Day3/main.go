@@ -151,53 +151,53 @@
 
 // }
 
-// package main
-// import "fmt"
-// type Node struct {
-// 	data int
-// 	next *Node
-// }
-
-// func main() {
-// 	node1 := &Node{data: 10}
-// 	node2 := &Node{data: 20}
-// 	node3 := &Node{data: 30}
-
-// 	node1.next = node2
-// 	node2.next = node3
-
-// 	head := node1
-// 	current:=head
-
-// 	 var arr []int
-// 	 for current!=nil{
-// 		arr = append(arr, current.data)
-// 		current=current.next
-// 	 }
-// 	 fmt.Println(arr)
-// }
-
 package main
-
 import "fmt"
 type Node struct {
 	data int
 	next *Node
 }
-func main() {
-	arr:=[]int{1,2,3,4,5}
 
-	head:=&Node{data: arr[0]}
+func main() {
+	node1 := &Node{data: 10}
+	node2 := &Node{data: 20}
+	node3 := &Node{data: 30}
+
+	node1.next = node2
+	node2.next = node3
+
+	head := node1
 	current:=head
 
-	for i:=1;i<len(arr);i++{
-		newNode:=&Node{data: arr[i]}
-		current.next=newNode
-		current=newNode
-	}
-	temp:=head
-	for temp!=nil{
-		fmt.Println(temp.data)
-		temp=temp.next
-	}
+	 var arr []int
+	 for current!=nil{
+		arr = append(arr, current.data)
+		current=current.next
+	 }
+	 fmt.Println(arr)
 }
+
+// package main
+
+// import "fmt"
+// type Node struct {
+// 	data int
+// 	next *Node
+// }
+// func main() {
+// 	arr:=[]int{1,2,3,4,5}
+
+// 	head:=&Node{data: arr[0]}
+// 	current:=head
+
+// 	for i:=1;i<len(arr);i++{
+// 		newNode:=&Node{data: arr[i]}
+// 		current.next=newNode
+// 		current=newNode
+// 	}
+// 	temp:=head
+// 	for temp!=nil{
+// 		fmt.Println(temp.data)
+// 		temp=temp.next
+// 	}
+// }
