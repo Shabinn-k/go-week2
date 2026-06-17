@@ -121,36 +121,6 @@
 // 	}
 // }
 
-// package main
-// import "fmt"
-// type Node struct {
-// 	data int
-// 	next *Node
-// }
-
-// func main() {
-// 	node1 := &Node{data: 10}
-// 	node2 := &Node{data: 20}
-// 	node3 := &Node{data: 30}
-
-// 	node1.next = node2
-// 	node2.next = node3
-
-// 	head := node1
-// 	current := head
-// 	target:=20
-
-// 	for current != nil {
-// 		if current.data==target{
-// 			fmt.Println("value found",current.data)
-// 			return
-// 		}
-// 		current=current.next
-// 	}
-// 	fmt.Println("value not found")
-
-// }
-
 package main
 import "fmt"
 type Node struct {
@@ -167,15 +137,45 @@ func main() {
 	node2.next = node3
 
 	head := node1
-	current:=head
+	current := head
+	target:=20
 
-	 var arr []int
-	 for current!=nil{
-		arr = append(arr, current.data)
+	for current != nil {
+		if current.data==target{
+			fmt.Println("value found",current.data)
+			return
+		}
 		current=current.next
-	 }
-	 fmt.Println(arr)
+	}
+	fmt.Println("value not found")
+
 }
+
+// package main
+// import "fmt"
+// type Node struct {
+// 	data int
+// 	next *Node
+// }
+
+// func main() {
+// 	node1 := &Node{data: 10}
+// 	node2 := &Node{data: 20}
+// 	node3 := &Node{data: 30}
+
+// 	node1.next = node2
+// 	node2.next = node3
+
+// 	head := node1
+// 	current:=head
+
+// 	 var arr []int
+// 	 for current!=nil{
+// 		arr = append(arr, current.data)
+// 		current=current.next
+// 	 }
+// 	 fmt.Println(arr)
+// }
 
 // package main
 
