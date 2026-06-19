@@ -69,35 +69,6 @@
 // }
 
 //DELETING AT END
-// package main
-// import f "fmt"
-// type Node struct{
-// 	data int
-// 	next *Node
-// }
-// func main() {
-// 	node1:=&Node{data: 1}
-// 	node2:=&Node{data: 2}
-// 	node3:=&Node{data: 3}
-
-// 	node1.next=node2
-// 	node2.next=node3
-
-// 	head:=node1
-// 	current:=head
-
-// 	for current.next.next!=nil{
-// 		current=current.next
-// 	}
-// 	current.next=nil
-
-// 	for head!=nil{
-// 		f.Println(head.data)
-// 		head=head.next
-// 	}
-// }
-
-//DELETING AT BEGINNING
 package main
 import f "fmt"
 type Node struct{
@@ -113,13 +84,42 @@ func main() {
 	node2.next=node3
 
 	head:=node1
-	head=head.next
+	current:=head
+
+	for current.next.next!=nil{
+		current=current.next
+	}
+	current.next=nil
 
 	for head!=nil{
 		f.Println(head.data)
 		head=head.next
 	}
 }
+
+//DELETING AT BEGINNING
+// package main
+// import f "fmt"
+// type Node struct{
+// 	data int
+// 	next *Node
+// }
+// func main() {
+// 	node1:=&Node{data: 1}
+// 	node2:=&Node{data: 2}
+// 	node3:=&Node{data: 3}
+
+// 	node1.next=node2
+// 	node2.next=node3
+
+// 	head:=node1
+// 	head=head.next
+
+// 	for head!=nil{
+// 		f.Println(head.data)
+// 		head=head.next
+// 	}
+// }
 
 // package main
 // import "fmt"
