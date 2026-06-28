@@ -156,73 +156,71 @@
 // }
 
 //double linked
-// package main
-// import "fmt"
-// type Node struct{
-// 	prev *Node
-// 	data int
-// 	next *Node
-// }
-// func main() {
-// 	node1:=&Node{data: 10}
-// 	node2:=&Node{data: 20}
-// 	node3:=&Node{data: 30}
-
-// 	node1.next=node2
-// 	node2.prev=node1
-// 	node2.next=node3
-// 	node3.prev=node2
-
-// 	head:=node1
-// 	current:=head
-
-// 	node0:=&Node{data: 0}
-// 	node0.next=head
-// 	head.prev=node0
-// 	head=node0
-// 	newNode:=&Node{data: 40}
-// 	for current.next!=nil{
-// 		current=current.next
-// 	}
-// 	current.next=newNode
-// 	newNode.prev=current
-// 	current.next=nil
-// 	head=head.next
-// 	head.prev=nil
-// 	for head!=nil{
-// 		fmt.Println(head.data)
-// 		head=head.next
-// 	}
-// }
-
 package main
-
 import "fmt"
 type Node struct{
+	prev *Node
 	data int
 	next *Node
 }
-func find(head *Node)*Node{
-	fast:=head
-	slow:=head
-	for fast!=nil&&fast.next!=nil{
-		slow=slow.next
-		fast=fast.next.next
-	}
-	return slow
-}
 func main() {
-	node1 := &Node{data: 1}
-	node2 := &Node{data: 2}
-	node3 := &Node{data: 3}
-	node4 := &Node{data: 4}
-	node5 := &Node{data: 5}
+	node1:=&Node{data: 10}
+	node2:=&Node{data: 20}
+	node3:=&Node{data: 30}
 
-	node1.next = node2
-	node2.next = node3
-	node3.next = node4
-	node4.next = node5
+	node1.next=node2
+	node2.prev=node1
+	node2.next=node3
+	node3.prev=node2
+
 	head:=node1
-	middle:=find(head)
-	fmt.Println(middle.data)
+	current:=head
+
+	node0:=&Node{data: 0}
+	node0.next=head
+	head.prev=node0
+	head=node0
+	newNode:=&Node{data: 40}
+	for current.next!=nil{
+		current=current.next
+	}
+	current.next=newNode
+	newNode.prev=current
+	current.next=nil
+	head=head.next
+	head.prev=nil
+	for head!=nil{
+		fmt.Println(head.data)
+		head=head.next
+	}
 }
+ 
+// import "fmt"
+// type Node struct{
+// 	data int
+// 	next *Node
+// }
+// func find(head *Node)*Node{
+// 	fast:=head
+// 	slow:=head
+// 	for fast!=nil&&fast.next!=nil{
+// 		slow=slow.next
+// 		fast=fast.next.next
+// 	}
+// 	return slow
+// }
+// func main() {
+// 	node1 := &Node{data: 1}
+// 	node2 := &Node{data: 2}
+// 	node3 := &Node{data: 3}
+// 	node4 := &Node{data: 4}
+// 	node5 := &Node{data: 5}
+
+// 	node1.next = node2
+// 	node2.next = node3
+// 	node3.next = node4
+// 	node4.next = node5
+// 	head:=node1
+// 	middle:=find(head)
+// 	fmt.Println(middle.data)
+// }
